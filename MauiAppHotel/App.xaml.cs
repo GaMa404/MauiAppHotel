@@ -1,9 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MauiAppHotel.Models;
 
 namespace MauiAppHotel
 {
     public partial class App : Application
     {
+        public static List<Usuario> lista_usuarios = [];
+
         public App()
         {
             InitializeComponent();

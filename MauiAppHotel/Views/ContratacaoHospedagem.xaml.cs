@@ -80,7 +80,17 @@ public partial class ContratacaoHospedagem : ContentPage
         }
         catch(Exception ex)
         {
-            await DisplayAlertAsync("Ops", ex.Message, "OK");
+            await DisplayAlertAsync("Erro", ex.Message, "OK");
         }
+    }
+
+    protected override async void OnAppearing()
+    {
+        txt_usuario_logado.Text = await SecureStorage.Default.GetAsync("email");
+    }
+
+    private async void Button_Clicked_1(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Login());
     }
 }

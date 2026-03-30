@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Login"
+             Title="Login">
+    <VerticalStackLayout Padding="10" Spacing="10" VerticalOptions="Center">
+        <Label Text="Login" 
+       HorizontalTextAlignment="Center"
+       FontSize="45"
+       TextColor="{StaticResource Primary}"/>
+
+
+        <Border Padding="10" StrokeShape="RoundRectangle 10">
+            <VerticalStackLayout Spacing="10" Margin="10">
+
+                <Label Text="Email"/>
+                <Entry x:Name="entry_email" Placeholder="exemplo@email.com" />
+
+                <Label Text="Senha"/>
+                <Entry x:Name="entry_senha" Placeholder="exemplo123" IsPassword="True" />
+
+                <Button Text="Entrar" Clicked="Button_Clicked"/>
+
+                <Label HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Não tem uma conta ainda? " FontSize="15"/>
+                            <Span Text="Cadastre-se!"
+                                 TextColor="Blue"
+                                 TextDecorations="Underline"
+                                 FontSize="15" 
+                                  >
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

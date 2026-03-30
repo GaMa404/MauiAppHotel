@@ -2,14 +2,17 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.Views.ContratacaoHospedagem">
-    
+
     <!-- Container geral da tela -->
-    <VerticalStackLayout Padding="10" Spacing="10">
+    <VerticalStackLayout Padding="10" Spacing="10" VerticalOptions="Center">
+
         <Label Text="Cálculo de Diária" 
                HorizontalTextAlignment="Center"
                FontFamily="PoppinsRegular"
                FontSize="45"
                TextColor="{StaticResource Primary}"/>
+
+        <Label x:Name="txt_usuario_logado" />
 
         <!-- Container das quantidades de pessoas e escolha de quarto -->
         <Border Padding="10" StrokeShape="RoundRectangle 10">
@@ -54,5 +57,8 @@
 
             </VerticalStackLayout>
         </Border>
+
+        <Button Text="Logout" Clicked="Button_Clicked_1"
+                BackgroundColor="Red" HorizontalOptions="Center"  />
     </VerticalStackLayout>
 </ContentPage>
