@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
-             Title="ContratacaoHospedagem">
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem">
     
     <!-- Container geral da tela -->
     <VerticalStackLayout Padding="10" Spacing="10">
-        <Label Text="Cálculo de Diária" />
+        <Label Text="Cálculo de Diária" 
+               HorizontalTextAlignment="Center"
+               FontFamily="PoppinsRegular"
+               FontSize="45"
+               TextColor="{StaticResource Primary}"/>
 
         <!-- Container das quantidades de pessoas e escolha de quarto -->
         <Border Padding="10" StrokeShape="RoundRectangle 10">
@@ -42,7 +45,7 @@
 
                         <HorizontalStackLayout>
                             <Label Text="Check-out:" />
-                            <DatePicker x:Name="dtpck_checkout" DateSelected="dtpck_checkout_DateSelected"  Format="dd/MM/yyyy"/>
+                            <DatePicker x:Name="dtpck_checkout" Format="dd/MM/yyyy"/>
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
                 </Border>

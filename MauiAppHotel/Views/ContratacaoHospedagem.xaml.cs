@@ -57,13 +57,30 @@ public partial class ContratacaoHospedagem : ContentPage
         dtpck_checkin.MaximumDate = data_selecionada.AddMonths(2);
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
+        try
+        {
+            // Montagem do objeto com os dados da hospedagem
+            Hospedagem h = new()
+            {
+                QuartoSelecionado = (Quarto)pck_quarto.SelectedItem,
+                DataCheckIn = (DateTime) dtpck_checkin.Date,
+                DataCheckOut = (DateTime) dtpck_checkout.Date,
+                QntAdultos = Convert.ToInt16(stp_adultos.Value),
+                QntCriancas = Convert.ToInt16(stp_criancas.Value),
+            };
 
-    }
-
-    private void dtpck_checkout_DateSelected(object sender, DateChangedEventArgs e)
-    {
-
+            // Criação da nova tela, onde serão mostrados os dados de hospedagem
+            // Juntando o esqueleto da tela com os dados da hospedagem
+            await Navigation.PushAsync(new HospedagemContratada()
+            {
+                BindingContext = h
+            });
+        }
+        catch(Exception ex)
+        {
+            await DisplayAlertAsync("Ops", ex.Message, "OK");
+        }
     }
 }
